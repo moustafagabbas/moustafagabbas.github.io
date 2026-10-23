@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baghoosh Resort Analysis | Moustafa Gamal</title>
+<meta name="description" content="Why a 320-unit resort was not selling: data cleaning, pricing analysis, a prediction model and dashboards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css?v=9">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<aside class="rail" aria-label="Sections">
+  <ul>
+    <li class="ind" aria-hidden="true"></li>
+    <li><a class="item" href="../../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span class="tip">All projects</span></a></li>
+    <li><a class="item" href="#overview"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="tip">Overview</span></a></li>
+    <li><a class="item" href="#stats"><svg viewBox="0 0 24 24"><path d="M3 20h18M6 16v-5M11 16V5M16 16v-8M21 16v-3"/></svg><span class="tip">Stats</span></a></li>
+    <li><a class="item" href="#story"><svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5zM5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7h6M9 11h6"/></svg><span class="tip">Story</span></a></li>
+    <li><a class="item" href="#findings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span class="tip">Findings</span></a></li>
+    <li><a class="item" href="#recommendations"><svg viewBox="0 0 24 24"><path d="m4 7 2 2 4-4M4 16l2 2 4-4M13 7h7M13 17h7"/></svg><span class="tip">Recommendations</span></a></li>
+    <li><a class="item" href="#dashboards"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg><span class="tip">Dashboards</span></a></li>
+    <li><a class="item" href="#how"><svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M8 5h7.5a3.5 3.5 0 0 1 0 7h-7a3.5 3.5 0 0 0 0 7H16"/></svg><span class="tip">How I did it</span></a></li>
+  </ul>
+  <div class="progress" aria-hidden="true"><div></div></div>
+</aside>
+
+<header class="hero phero landing" id="overview">
+  <div class="glow v" style="width:520px;height:520px;top:-180px;left:-200px"></div>
+  <div class="glow b" style="width:420px;height:420px;top:60px;right:-160px"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="../../index.html#projects">← cd ../projects</a></div>
+    <div class="pills"><span class="pill">real-estate</span><span class="pill">pricing</span><span class="pill">sales</span><span class="pill">2025</span></div>
+    <p class="hello">Baghoosh Resort · Al Riyadh Real Estate</p>
+    <h1>Why is a 320-unit resort<br><span class="grad">not selling?</span></h1>
+    <p class="lead">176 units were still unsold and handover was close. I found which units were not selling, why, and what to change.</p>
+    <div class="btns">
+      <a class="btn primary" href="dashboard.html" target="_blank" rel="noopener">Open the live dashboard ↗</a>
+      <a class="btn ghost" href="https://github.com/moustafagabbas/baghoosh-resort-analytics">Code on GitHub</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#stats"><i></i>scroll</a>
+</header>
+
+<section class="block" id="stats">
+  <div class="wrap"><div class="shell reveal">
+    <div class="sec-head">
+      <div>
+        <div class="label"><span>Stats</span></div>
+        <h2>The project in numbers</h2>
+        <p class="intro">From 15 messy department files to a pricing answer, a prediction model and three dashboards.</p>
+      </div>
+      
+    </div>
+    <div class="dash">
+      <div class="hud">
+        <h3>Baghoosh Resort <span class="tagline">@al-riyadh-real-estate</span></h3>
+        <div class="metric"><div class="row"><span class="name">Units sold</span><span class="val c-blue">144 / 320</span></div><div class="track"><div class="fill bg-blue" style="width:45%"></div></div></div>
+        <div class="metric"><div class="row"><span class="name">Sold when priced at policy</span><span class="val c-green">74%</span></div><div class="track"><div class="fill bg-green" style="width:74%"></div></div></div>
+        <div class="metric"><div class="row"><span class="name">Sold when ~15% above policy</span><span class="val c-red">16%</span></div><div class="track"><div class="fill bg-red" style="width:16%"></div></div></div>
+        <div class="metric"><div class="row"><span class="name">Model accuracy</span><span class="val c-cyan">0.70</span></div><div class="track"><div class="fill bg-cyan" style="width:70%"></div></div></div>
+        <div class="metric" style="margin-bottom:0"><div class="row"><span class="name">Baseline (guessing)</span><span class="val c-amber">0.55</span></div><div class="track"><div class="fill bg-amber" style="width:55%"></div></div></div>
+      </div>
+      <div class="hud corners" style="display:grid;place-items:center">
+        <div class="radar">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <defs><radialGradient id="sw" cx="0" cy="0" r="1"><stop offset="0" stop-color="#4c8dff" stop-opacity=".55"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient></defs>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(76,141,255,.25)"/>
+            <circle cx="100" cy="100" r="64" fill="none" stroke="rgba(76,141,255,.2)"/>
+            <circle cx="100" cy="100" r="36" fill="none" stroke="rgba(76,141,255,.2)"/>
+            <line x1="8" y1="100" x2="192" y2="100" stroke="rgba(76,141,255,.12)"/><line x1="100" y1="8" x2="100" y2="192" stroke="rgba(76,141,255,.12)"/>
+            <g class="sweep"><path d="M100,100 L100,8 A92,92 0 0,1 165,35 Z" fill="url(#sw)"/><line x1="100" y1="100" x2="100" y2="8" stroke="#4c8dff" stroke-width="1.5"/></g>
+            <circle cx="100" cy="100" r="5" fill="#fff"/><circle cx="100" cy="100" r="10" fill="none" stroke="#fff" stroke-opacity=".3"/>
+            <circle cx="58" cy="62" r="4" fill="#8b6cff"/><circle cx="150" cy="70" r="4" fill="#3ef08f"/>
+            <circle cx="140" cy="148" r="4" fill="#38d3f5"/><circle cx="54" cy="140" r="4" fill="#ffb547"/>
+          </svg>
+          <div class="chip c-violet" style="left:22%;top:20%"><b>15</b>source files</div>
+          <div class="chip c-green" style="left:80%;top:24%"><b>121</b>data fixes</div>
+          <div class="chip c-cyan" style="left:78%;top:84%"><b>9</b>model features</div>
+          <div class="chip c-amber" style="left:22%;top:80%"><b>3</b>dashboards</div>
+        </div>
+      </div>
+      <div class="hud wide">
+        <h3>Units sold over time <span class="tagline">May 2024 → Dec 2025</span></h3>
+        <p class="sub">Total Phase 1 units sold, reaching 144 of 320 by December 2025.</p>
+        <div class="spark" data-chart="monthly"></div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<section class="block" id="story">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>The short version</span></div>
+    <h2>Problem, work, answer</h2>
+    <p class="intro">The whole project in three cards.</p>
+    <div class="story">
+      <div class="hud"><span class="step-n">01 / problem</span><h3>Too many unsold units</h3><p>320 homes went on sale in April 2024. By the end of 2025, 144 had sold and 176 were still on the market, with handover starting in August 2026.</p></div>
+      <div class="hud"><span class="step-n">02 / work</span><h3>15 files into one answer</h3><p>I combined 15 messy files from 7 departments, measured how far each unit's price was above the company's own pricing policy, trained a model, and built dashboards.</p></div>
+      <div class="hud"><span class="step-n">03 / answer</span><h3>It is the price</h3><p>Units priced at the policy price sold 74%. Units about 15% above it sold only 16%.</p></div>
+    </div>
+    <p class="note"><b>NOTE</b>This is real company work. To protect confidential information, names, identifiers and figures were anonymized with AI before publishing. The patterns behind the findings were kept.</p>
+  </div></div>
+</section>
+
+<section class="block" id="findings">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Findings</span></div>
+    <h2>What the data showed</h2>
+    <p class="intro">The key result first: the further a unit's price is above policy, the less likely it sells.</p>
+    <div class="dash">
+      <div class="hud wide">
+        <h3>320 units, grouped by price vs policy <span class="tagline">1 square = 1 unit</span></h3>
+        <p class="sub">80 units in each group. Lit squares are sold.</p>
+        <div class="units" data-chart="units"></div>
+        <div class="legend"><span><i style="background:var(--cyan)"></i>sold</span><span><i style="background:var(--red)"></i>sold (furthest above policy)</span><span><i style="background:rgba(76,141,255,.2)"></i>not sold</span></div>
+      </div>
+      <div class="hud">
+        <h3>What predicts a sale</h3>
+        <p class="sub">The 4 unit facts the model relied on most</p>
+        <div class="nbar"><span class="l">price vs policy</span><div class="t"><div class="bg-violet" style="width:100%"></div></div><span class="v c-violet">#1</span></div>
+        <div class="nbar"><span class="l">price vs type</span><div class="t"><div class="bg-blue" style="width:36%"></div></div><span class="v">#2</span></div>
+        <div class="nbar"><span class="l">built-up area</span><div class="t"><div class="bg-blue" style="width:25%"></div></div><span class="v">#3</span></div>
+        <div class="nbar"><span class="l">distance to beach</span><div class="t"><div class="bg-blue" style="width:18%"></div></div><span class="v">#4</span></div>
+        <p class="sub" style="margin:14px 0 0">"Price vs policy" matters more than the next three together.</p>
+      </div>
+      <div class="hud">
+        <h3>Lead-to-sale conversion</h3>
+        <p class="sub">Share of leads that bought, by channel</p>
+        <div class="nbar"><span class="l">Walk-in</span><div class="t"><div class="bg-green" style="width:100%"></div></div><span class="v">10.8%</span></div>
+        <div class="nbar"><span class="l">Existing client</span><div class="t"><div class="bg-green" style="width:88%"></div></div><span class="v">9.5%</span></div>
+        <div class="nbar"><span class="l">Event</span><div class="t"><div class="bg-cyan" style="width:71%"></div></div><span class="v">7.7%</span></div>
+        <div class="nbar"><span class="l">Broker referral</span><div class="t"><div class="bg-cyan" style="width:60%"></div></div><span class="v">6.5%</span></div>
+        <div class="nbar"><span class="l">Property portal</span><div class="t"><div class="bg-amber" style="width:35%"></div></div><span class="v">3.8%</span></div>
+        <div class="nbar"><span class="l">Meta</span><div class="t"><div class="bg-red" style="width:19%"></div></div><span class="v">2.1%</span></div>
+      </div>
+    </div>
+    <div class="findings" style="margin-top:18px">
+      <div class="finding"><span class="num c-amber">22%</span><b>Villas are the weak spot, and it is a pricing problem.</b><p>Only 22% of villas sold. Once price is taken into account, having a pool makes almost no difference.</p></div>
+      <div class="finding"><span class="num c-red">2.1%</span><b>Marketing buys volume, not buyers.</b><p>Meta brings 32% of all leads, but only 2.1% of them buy.</p></div>
+      <div class="finding"><span class="num c-violet">29%</span><b>Sales depend on a few brokers.</b><p>One broker closed 29% of all contract value, and 137 leads had no broker at all.</p></div>
+      <div class="finding"><span class="num c-cyan">28 / 28</span><b>Construction is behind plan.</b><p>64.3% built against 68.6% planned, with every Phase 1 building behind.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="block" id="recommendations">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Recommendations</span></div>
+    <h2>What I told management</h2>
+    <p class="intro">Five actions, each backed by a finding above.</p>
+    <div class="recs">
+      <div class="rec"><p><b>Bring overpriced units back to the policy price</b>, not a cut across every unit.</p></div>
+      <div class="rec"><p><b>Give villas their own price and offer.</b></p></div>
+      <div class="rec"><p><b>Push longer payment plans</b> before cash discounts.</p></div>
+      <div class="rec"><p><b>Move marketing budget</b> from Meta to referrals, events and existing clients.</p></div>
+      <div class="rec"><p><b>Assign every lead to a broker.</b></p></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="block" id="dashboards">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Dashboards</span></div>
+    <h2>See it without installing anything</h2>
+    <p class="intro">Screenshots below, or <a href="dashboard.html" target="_blank" rel="noopener">open the interactive dashboard</a> in your browser: four pages, with filters.</p>
+    <div class="gallery">
+      <figure><div class="chrome"><i></i><i></i><i></i><span>executive-overview</span></div><img src="../../assets/baghoosh/dash-overview.png" alt="Executive overview dashboard" loading="lazy"><figcaption><b>Executive overview:</b> inventory, sales and the sales funnel at a glance.</figcaption></figure>
+      <figure><div class="chrome"><i></i><i></i><i></i><span>inventory-and-pricing</span></div><img src="../../assets/baghoosh/dash-inventory.png" alt="Inventory and pricing dashboard" loading="lazy"><figcaption><b>Inventory &amp; pricing:</b> filter units by cluster, type, view and payment plan.</figcaption></figure>
+      <figure><div class="chrome"><i></i><i></i><i></i><span>sales-and-brokers</span></div><img src="../../assets/baghoosh/dash-sales.png" alt="Sales and brokers dashboard" loading="lazy"><figcaption><b>Sales &amp; brokers:</b> lead sources, conversion and broker performance.</figcaption></figure>
+      <figure><div class="chrome"><i></i><i></i><i></i><span>phase-1-investment</span></div><img src="../../assets/baghoosh/dash-investment.png" alt="Phase 1 investment dashboard" loading="lazy"><figcaption><b>Investment view:</b> rental yield and expected value for buyers.</figcaption></figure>
+    </div>
+  </div></div>
+</section>
+
+<section class="block" id="how">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Process</span></div>
+    <h2>How I did it</h2>
+    <p class="intro">Python (pandas, scikit-learn), Power BI (DAX, Power Query), Streamlit, Excel, HTML/JavaScript.</p>
+    <div class="steps">
+      <div class="step"><span class="n">step_01</span><h3>Clean</h3><p>Fixed 121 problems across 15 files, like 20 spellings of 6 property types and prices 10× too high. Every fix was logged.</p></div>
+      <div class="step"><span class="n">step_02</span><h3>Model the data</h3><p>Built a star schema so Power BI and Python read the same clean numbers.</p></div>
+      <div class="step"><span class="n">step_03</span><h3>Find the driver</h3><p>Rebuilt the pricing policy for every unit and measured how far the real price was above it.</p></div>
+      <div class="step"><span class="n">step_04</span><h3>Predict &amp; share</h3><p>Logistic regression, 0.70 accuracy vs 0.55 baseline, using only facts known on launch day.</p></div>
+    </div>
+    <div class="btns" style="justify-content:center;margin-top:36px">
+      <a class="btn ghost" href="https://github.com/moustafagabbas/baghoosh-resort-analytics">See the code and notebook</a>
+      <a class="btn ghost" href="../../index.html">← Back to portfolio</a>
+    </div>
+  </div></div>
+</section>
+
+<footer>© 2026 Moustafa Gamal</footer>
+<script src="../../assets/charts.js?v=9"></script>
+<script src="../../assets/nav.js?v=9"></script>
+</body>
+</html>
