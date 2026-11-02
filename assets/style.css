@@ -405,3 +405,11 @@ button.jcard:hover, button.jcard:focus-visible { transform: translateY(-3px); bo
 .lightbox figcaption .verify:hover { background: rgba(56,211,245,.1); border-color: var(--cyan); }
 .btn.wa svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
 .btn.wa:hover { border-color: #25d366; color: #fff; }
+
+/* card preview drawn with bars instead of a screenshot */
+.card .shot.mini { display: flex; flex-direction: column; justify-content: center; padding: 18px 22px; }
+.card .shot.mini .cap { font: 11.5px var(--mono); color: var(--muted); margin-bottom: 6px; }
+.card .shot.mini .nbar { margin: 7px 0; grid-template-columns: 112px 1fr 40px; }
+/* light notebook charts on the dark site */
+figure img.paper { display: block; width: 100%; box-sizing: border-box; background: #fff; padding: 12px; }
+.gallery.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
