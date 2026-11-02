@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Price Prediction | Moustafa Gamal</title>
+<meta name="description" content="Predicting car prices from engine size, horsepower, weight and fuel economy with four regression models in scikit-learn, and checking the result with cross-validation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css?v=10">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<aside class="rail" aria-label="Sections">
+  <ul>
+    <li class="ind" aria-hidden="true"></li>
+    <li><a class="item" href="../../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span class="tip">All projects</span></a></li>
+    <li><a class="item" href="#overview"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="tip">Overview</span></a></li>
+    <li><a class="item" href="#story"><svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5zM5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7h6M9 11h6"/></svg><span class="tip">Story</span></a></li>
+    <li><a class="item" href="#findings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span class="tip">Findings</span></a></li>
+    <li><a class="item" href="#learned"><svg viewBox="0 0 24 24"><path d="m4 7 2 2 4-4M4 16l2 2 4-4M13 7h7M13 17h7"/></svg><span class="tip">What I learned</span></a></li>
+    <li><a class="item" href="#how"><svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M8 5h7.5a3.5 3.5 0 0 1 0 7h-7a3.5 3.5 0 0 0 0 7H16"/></svg><span class="tip">How I did it</span></a></li>
+    <li><a class="item" href="#charts"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg><span class="tip">Charts</span></a></li>
+  </ul>
+  <div class="progress" aria-hidden="true"><div></div></div>
+</aside>
+
+<header class="hero phero landing" id="overview">
+  <div class="glow v" style="width:520px;height:520px;top:-180px;left:-200px"></div>
+  <div class="glow b" style="width:420px;height:420px;top:60px;right:-160px"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="../../index.html#projects">← cd ../projects</a></div>
+    <div class="pills"><span class="pill">machine-learning</span><span class="pill">regression</span><span class="pill">pricing</span><span class="pill">ibm-course</span></div>
+    <p class="hello">Car prices · IBM course project</p>
+    <h1>Can we predict a car's price<br><span class="grad">from its specs?</span></h1>
+    <p class="lead">A car dealer wants a fair price for each car. I tested four regression models on engine size, horsepower, weight and fuel economy, picked the best one, and checked honestly how far the result can be trusted.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/moustafagabbas/car-price-prediction" target="_blank" rel="noopener">Code on GitHub ↗</a>
+      <a class="btn ghost" href="https://github.com/moustafagabbas/car-price-prediction/blob/main/car_price_prediction.ipynb" target="_blank" rel="noopener">Open the notebook</a>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#story"><i></i>scroll</a>
+</header>
+
+<section class="block" id="story">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>The short version</span></div>
+    <h2>Problem, work, answer</h2>
+    <p class="intro">The whole project in 30 seconds.</p>
+    <div class="story">
+      <div class="hud"><span class="step-n">01 / problem</span><h3>Price a car fairly</h3><p>"If we know a car's engine size, horsepower, weight and fuel economy, can we predict its price?"</p></div>
+      <div class="hud"><span class="step-n">02 / work</span><h3>Four models, one test set</h3><p>I found the features most related to price, kept 40 cars aside as a test set, and trained linear, multiple, polynomial and Ridge regression.</p></div>
+      <div class="hud"><span class="step-n">03 / answer</span><h3>Yes, with a warning</h3><p>Ridge explains 85% of the price with an average error of about 2,070 USD. But cross-validation shows the model is weak for car brands it has not seen.</p></div>
+    </div>
+    <p class="note"><b>DATA</b>The UCI Automobile dataset, cleaned version from IBM's Data Analysis with Python course: 197 cars after removing missing values. Prices are in US dollars from 1985, so they are not today's prices. This was the course's final assignment, rewritten as a clean notebook.</p>
+  </div></div>
+</section>
+
+<section class="block" id="findings">
+  <style>
+    #findings .ans { display: flex; flex-direction: column; }
+    #findings .q { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .6px; text-transform: uppercase; margin: 0 0 12px; }
+    #findings .big { font-family: var(--display); font-size: 44px; font-weight: 700; line-height: 1; margin: 0; }
+    #findings .head { font-family: var(--display); font-size: 19px; font-weight: 600; margin: 8px 0 18px; color: var(--text); }
+    #findings .nbar .t div.mute { background: rgba(255,255,255,.22); }
+    #findings .foot { margin: auto 0 0; padding-top: 14px; color: var(--text-2); font-size: 14px; border-top: 1px solid var(--line); }
+    #findings .scale { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: right; margin: -4px 52px 0 0; }
+    #findings .chips { display: flex; gap: 10px; margin: 14px 0 0; flex-wrap: wrap; }
+    #findings .chip { font-family: var(--mono); font-size: 12.5px; color: var(--text-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 12px; }
+    #findings .chip b { color: var(--text); }
+    @media (max-width: 560px) { #findings .big { font-size: 38px; } #findings .scale { margin-right: 44px; } }
+  </style>
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Findings</span></div>
+    <h2>What the data showed</h2>
+    <p class="intro">Four questions, four answers. Each card starts with the answer, then shows the numbers behind it.</p>
+    <div class="dash">
+
+      <div class="hud ans">
+        <p class="q">Q1 · What drives the price?</p>
+        <p class="big c-blue">0.89</p>
+        <p class="head">Engine size is the strongest sign of price.</p>
+        <div class="nbar"><span class="l">engine size</span><div class="t"><div class="bg-blue" style="width:89%"></div></div><span class="v c-blue">0.89</span></div>
+        <div class="nbar"><span class="l">curb weight</span><div class="t"><div class="mute" style="width:84%"></div></div><span class="v">0.84</span></div>
+        <div class="nbar"><span class="l">horsepower</span><div class="t"><div class="mute" style="width:81%"></div></div><span class="v">0.81</span></div>
+        <div class="nbar"><span class="l">width</span><div class="t"><div class="mute" style="width:75%"></div></div><span class="v">0.75</span></div>
+        <div class="nbar"><span class="l">highway mpg</span><div class="t"><div class="bg-amber" style="width:71%"></div></div><span class="v c-amber">-0.71</span></div>
+        <p class="scale">correlation with price, 0 → 1</p>
+        <p class="foot">Bigger, heavier, more powerful cars cost more. Cars that use less fuel (high mpg) are usually cheaper.</p>
+      </div>
+
+      <div class="hud ans">
+        <p class="q">Q2 · Which model predicts best?</p>
+        <p class="big c-green">0.85</p>
+        <p class="head">Ridge regression wins on the test set.</p>
+        <div class="nbar"><span class="l">Ridge</span><div class="t"><div class="bg-green" style="width:85%"></div></div><span class="v c-green">0.85</span></div>
+        <div class="nbar"><span class="l">Multiple linear</span><div class="t"><div class="mute" style="width:82%"></div></div><span class="v">0.82</span></div>
+        <div class="nbar"><span class="l">Polynomial (hp)</span><div class="t"><div class="mute" style="width:63%"></div></div><span class="v">0.63</span></div>
+        <div class="nbar"><span class="l">Linear (hp)</span><div class="t"><div class="mute" style="width:62%"></div></div><span class="v">0.62</span></div>
+        <p class="scale">R² on 40 test cars, 0 → 1</p>
+        <p class="foot">Using 6 features is much better than horsepower alone. Ridge adds a penalty that stops overfitting.</p>
+      </div>
+
+      <div class="hud ans">
+        <p class="q">Q3 · How big is the error?</p>
+        <p class="big c-violet">2,073</p>
+        <p class="head">Average error in USD with the best model.</p>
+        <div class="nbar"><span class="l">Linear (hp)</span><div class="t"><div class="mute" style="width:100%"></div></div><span class="v">3,417</span></div>
+        <div class="nbar"><span class="l">Polynomial (hp)</span><div class="t"><div class="mute" style="width:96%"></div></div><span class="v">3,278</span></div>
+        <div class="nbar"><span class="l">Multiple linear</span><div class="t"><div class="mute" style="width:69%"></div></div><span class="v">2,341</span></div>
+        <div class="nbar"><span class="l">Ridge</span><div class="t"><div class="bg-violet" style="width:61%"></div></div><span class="v c-violet">2,073</span></div>
+        <p class="scale">mean absolute error, USD</p>
+        <div class="chips">
+          <span class="chip">average car price <b>~13,200 USD</b></span>
+          <span class="chip">error cut by <b>39%</b></span>
+        </div>
+        <p class="foot">From horsepower only to Ridge, the average error drops from 3,417 to 2,073 USD.</p>
+      </div>
+
+      <div class="hud ans">
+        <p class="q">Q4 · Can we trust the score?</p>
+        <p class="big c-red">0.57</p>
+        <p class="head">Not fully: cross-validation is much lower.</p>
+        <div class="nbar"><span class="l">split 1</span><div class="t"><div class="mute" style="width:75%"></div></div><span class="v">0.75</span></div>
+        <div class="nbar"><span class="l">split 2</span><div class="t"><div class="mute" style="width:87%"></div></div><span class="v">0.87</span></div>
+        <div class="nbar"><span class="l">split 3</span><div class="t"><div class="bg-red" style="width:26%"></div></div><span class="v c-red">0.26</span></div>
+        <div class="nbar"><span class="l">split 4</span><div class="t"><div class="mute" style="width:63%"></div></div><span class="v">0.63</span></div>
+        <div class="nbar"><span class="l">split 5</span><div class="t"><div class="bg-red" style="width:32%"></div></div><span class="v c-red">0.32</span></div>
+        <p class="scale">R² in 5-fold cross-validation (linear model)</p>
+        <p class="foot">The rows are sorted by brand, so some splits test brands the model never saw. Brand matters a lot, but it is not in the model.</p>
+      </div>
+
+    </div>
+  </div></div>
+</section>
+
+<section class="block" id="learned">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>What I learned</span></div>
+    <h2>Four lessons from this project</h2>
+    <p class="intro">Each one is backed by a result above.</p>
+    <div class="recs">
+      <div class="rec"><p><b>More features help.</b> Six features explain much more of the price than horsepower alone (R² 0.82 vs 0.62).</p></div>
+      <div class="rec"><p><b>More complex is not always better.</b> A polynomial of degree 5 scored lower than degree 3. That is overfitting.</p></div>
+      <div class="rec"><p><b>Ridge controls overfitting</b> when there are many polynomial features. It gave the best score.</p></div>
+      <div class="rec"><p><b>One test split can look too good.</b> Cross-validation gave 0.57 instead of 0.82, and showed the missing brand feature.</p></div>
+    </div>
+    <p class="note"><b>LIMITS</b>Small (197 cars) and old (1985 prices) data. Only numeric features are used, so brand and body style are missing. The Ridge alpha was chosen on the test set; a cleaner way is cross-validation on the training set. Next step: add the brand as a feature.</p>
+  </div></div>
+</section>
+
+<section class="block" id="how">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Process</span></div>
+    <h2>How I did it</h2>
+    <p class="intro">Python (pandas, scikit-learn, Matplotlib, Seaborn) in a Jupyter notebook.</p>
+    <div class="steps">
+      <div class="step"><span class="n">step_01</span><h3>Clean</h3><p>Removed extra index columns, kept only numeric columns and dropped rows with missing values: 197 cars left.</p></div>
+      <div class="step"><span class="n">step_02</span><h3>Explore</h3><p>Checked the price distribution, the correlation of each column with price, and the price by brand.</p></div>
+      <div class="step"><span class="n">step_03</span><h3>Train</h3><p>Kept 20% (40 cars) as a test set. Trained linear, multiple linear, polynomial (degree 1 to 5) and Ridge (6 alpha values).</p></div>
+      <div class="step"><span class="n">step_04</span><h3>Compare &amp; check</h3><p>Compared R² and average error in USD, then used 5-fold cross-validation to see if the score holds.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="block" id="charts">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Charts</span></div>
+    <h2>The original charts from my notebook</h2>
+    <p class="intro">Made with Matplotlib and Seaborn in the Jupyter notebook. <a href="https://github.com/moustafagabbas/car-price-prediction/blob/main/car_price_prediction.ipynb" target="_blank" rel="noopener">See the notebook on GitHub</a>.</p>
+    <div class="gallery">
+      <figure><div class="chrome"><i></i><i></i><i></i><span>worst_vs_best.png</span></div><img class="paper" src="../../assets/car-price/worst_vs_best.png" alt="Actual vs predicted price for the horsepower-only model and for Ridge" loading="lazy"><figcaption><b>Worst vs best model:</b> each point is a test car. With Ridge, the points are much closer to the red line (perfect prediction).</figcaption></figure>
+    </div>
+    <div class="gallery two" style="margin-top:22px">
+      <figure><div class="chrome"><i></i><i></i><i></i><span>price_by_make.png</span></div><img class="paper" src="../../assets/car-price/price_by_make.png" alt="Price by car brand" loading="lazy"><figcaption><b>Price by brand:</b> luxury brands cost far more. This is why the brand matters.</figcaption></figure>
+      <figure><div class="chrome"><i></i><i></i><i></i><span>model_comparison.png</span></div><img class="paper" src="../../assets/car-price/model_comparison.png" alt="R2 and average error for each model" loading="lazy"><figcaption><b>Model comparison:</b> R² and average error in USD for the four models.</figcaption></figure>
+    </div>
+    <div class="gallery two" style="margin-top:22px">
+      <figure><div class="chrome"><i></i><i></i><i></i><span>line_vs_curve.png</span></div><img class="paper" src="../../assets/car-price/line_vs_curve.png" alt="Straight line vs polynomial curve on horsepower" loading="lazy"><figcaption><b>Line vs curve:</b> the curve fits a little better, but horsepower alone is not enough.</figcaption></figure>
+      <figure><div class="chrome"><i></i><i></i><i></i><span>cross_validation.png</span></div><img class="paper" src="../../assets/car-price/cross_validation.png" alt="R2 in each cross-validation split" loading="lazy"><figcaption><b>Cross-validation:</b> two of five splits score very low.</figcaption></figure>
+    </div>
+    <div class="gallery" style="margin-top:22px">
+      <figure><div class="chrome"><i></i><i></i><i></i><span>features_vs_price.png</span></div><img class="paper" src="../../assets/car-price/features_vs_price.png" alt="Engine size, curb weight, horsepower and highway mpg against price" loading="lazy"><figcaption><b>Features vs price:</b> the four features most related to price.</figcaption></figure>
+    </div>
+
+    <div class="btns" style="justify-content:center;margin-top:36px">
+      <a class="btn ghost" href="https://github.com/moustafagabbas/car-price-prediction" target="_blank" rel="noopener">See the code and notebook</a>
+      <a class="btn ghost" href="../../index.html">← Back to portfolio</a>
+    </div>
+  </div></div>
+</section>
+
+<footer>© 2026 Moustafa Gamal</footer>
+<script src="../../assets/nav.js?v=10"></script>
+</body>
+</html>
