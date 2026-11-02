@@ -18,12 +18,11 @@
     <li class="ind" aria-hidden="true"></li>
     <li><a class="item" href="../../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span class="tip">All projects</span></a></li>
     <li><a class="item" href="#overview"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="tip">Overview</span></a></li>
-    <li><a class="item" href="#stats"><svg viewBox="0 0 24 24"><path d="M3 20h18M6 16v-5M11 16V5M16 16v-8M21 16v-3"/></svg><span class="tip">Stats</span></a></li>
     <li><a class="item" href="#story"><svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5zM5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7h6M9 11h6"/></svg><span class="tip">Story</span></a></li>
     <li><a class="item" href="#findings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span class="tip">Findings</span></a></li>
     <li><a class="item" href="#recommendations"><svg viewBox="0 0 24 24"><path d="m4 7 2 2 4-4M4 16l2 2 4-4M13 7h7M13 17h7"/></svg><span class="tip">Recommendations</span></a></li>
-    <li><a class="item" href="#charts"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg><span class="tip">Charts</span></a></li>
     <li><a class="item" href="#how"><svg viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M8 5h7.5a3.5 3.5 0 0 1 0 7h-7a3.5 3.5 0 0 0 0 7H16"/></svg><span class="tip">How I did it</span></a></li>
+    <li><a class="item" href="#charts"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg><span class="tip">Charts</span></a></li>
   </ul>
   <div class="progress" aria-hidden="true"><div></div></div>
 </aside>
@@ -36,118 +35,115 @@
     <div class="pills"><span class="pill">retail</span><span class="pill">customer-ratings</span><span class="pill">pricing</span><span class="pill">kaggle</span></div>
     <p class="hello">IKEA UAE · public Kaggle data</p>
     <h1>How are IKEA products<br><span class="grad">doing in the UAE?</span></h1>
-    <p class="lead">I acted as a data analyst at IKEA UAE and split one big question into four small ones: ratings, Gulf prices, the Top Seller badge, and new products.</p>
+    <p class="lead">Imagine I am a data analyst at IKEA UAE. Using public Kaggle data, I answered one business question in four parts: ratings, Gulf prices, the Top Seller badge, and new products.</p>
     <div class="btns">
       <a class="btn primary" href="https://github.com/moustafagabbas/ikea-uae-analysis" target="_blank" rel="noopener">Code on GitHub ↗</a>
       <a class="btn ghost" href="https://www.kaggle.com/datasets/ranjithpanicker/ikea-global-product-catalog-and-price-2026/data" target="_blank" rel="noopener">The dataset on Kaggle</a>
     </div>
   </div>
-  <a class="scroll-cue" href="#stats"><i></i>scroll</a>
+  <a class="scroll-cue" href="#story"><i></i>scroll</a>
 </header>
-
-<section class="block" id="stats">
-  <div class="wrap"><div class="shell reveal">
-    <div class="sec-head">
-      <div>
-        <div class="label"><span>Stats</span></div>
-        <h2>The project in numbers</h2>
-        <p class="intro">401,046 products from 46 countries, filtered down to the 9,242 sold in the UAE.</p>
-      </div>
-    </div>
-    <div class="dash">
-      <div class="hud">
-        <h3>IKEA UAE <span class="tagline">@9,242-products</span></h3>
-        <div class="metric"><div class="row"><span class="name">Best category: small storage</span><span class="val c-green">4.62 / 5</span></div><div class="track"><div class="fill bg-green" style="width:92%"></div></div></div>
-        <div class="metric"><div class="row"><span class="name">Worst category: sofas</span><span class="val c-red">3.93 / 5</span></div><div class="track"><div class="fill bg-red" style="width:79%"></div></div></div>
-        <div class="metric"><div class="row"><span class="name">Products cheaper than in Saudi Arabia</span><span class="val c-blue">70%</span></div><div class="track"><div class="fill bg-blue" style="width:70%"></div></div></div>
-        <div class="metric"><div class="row"><span class="name">New or new lower price</span><span class="val c-cyan">20%</span></div><div class="track"><div class="fill bg-cyan" style="width:20%"></div></div></div>
-        <div class="metric" style="margin-bottom:0"><div class="row"><span class="name">Top Seller reviews vs others</span><span class="val c-amber">~3x</span></div><div class="track"><div class="fill bg-amber" style="width:100%"></div></div></div>
-      </div>
-      <div class="hud corners" style="display:grid;place-items:center">
-        <div class="radar">
-          <svg viewBox="0 0 200 200" aria-hidden="true">
-            <defs><radialGradient id="sw" cx="0" cy="0" r="1"><stop offset="0" stop-color="#4c8dff" stop-opacity=".55"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient></defs>
-            <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(76,141,255,.25)"/>
-            <circle cx="100" cy="100" r="64" fill="none" stroke="rgba(76,141,255,.2)"/>
-            <circle cx="100" cy="100" r="36" fill="none" stroke="rgba(76,141,255,.2)"/>
-            <line x1="8" y1="100" x2="192" y2="100" stroke="rgba(76,141,255,.12)"/><line x1="100" y1="8" x2="100" y2="192" stroke="rgba(76,141,255,.12)"/>
-            <g class="sweep"><path d="M100,100 L100,8 A92,92 0 0,1 165,35 Z" fill="url(#sw)"/><line x1="100" y1="100" x2="100" y2="8" stroke="#4c8dff" stroke-width="1.5"/></g>
-            <circle cx="100" cy="100" r="5" fill="#fff"/><circle cx="100" cy="100" r="10" fill="none" stroke="#fff" stroke-opacity=".3"/>
-            <circle cx="58" cy="62" r="4" fill="#8b6cff"/><circle cx="150" cy="70" r="4" fill="#3ef08f"/>
-            <circle cx="140" cy="148" r="4" fill="#38d3f5"/><circle cx="54" cy="140" r="4" fill="#ffb547"/>
-          </svg>
-          <div class="chip c-violet" style="left:22%;top:20%"><b>401K</b>rows</div>
-          <div class="chip c-green" style="left:80%;top:24%"><b>46</b>countries</div>
-          <div class="chip c-cyan" style="left:78%;top:84%"><b>5,136</b>matched products</div>
-          <div class="chip c-amber" style="left:22%;top:80%"><b>4</b>questions</div>
-        </div>
-      </div>
-    </div>
-  </div></div>
-</section>
 
 <section class="block" id="story">
   <div class="wrap"><div class="shell reveal">
     <div class="label"><span>The short version</span></div>
     <h2>Problem, work, answer</h2>
-    <p class="intro">The whole project in three cards.</p>
+    <p class="intro">The whole project in 30 seconds.</p>
     <div class="story">
       <div class="hud"><span class="step-n">01 / problem</span><h3>One big question</h3><p>"How are our products doing in the UAE, and what can we improve?" It is too big to answer at once, so I split it into four smaller questions.</p></div>
       <div class="hud"><span class="step-n">02 / work</span><h3>Clean, filter, compare</h3><p>I fixed rating columns stored as text, kept only UAE products, converted Gulf prices to AED and compared only products sold in all three countries.</p></div>
       <div class="hud"><span class="step-n">03 / answer</span><h3>Fix sofas, use the price</h3><p>Sofas have the lowest rating (3.93). The UAE is about 15% cheaper than Saudi Arabia. "Top Seller" means popular, not better rated.</p></div>
     </div>
-    <p class="note"><b>DATA</b>Public data: the IKEA Global Product Catalog and Price 2026 dataset on Kaggle. It is a snapshot of the online catalogue with ratings and prices, not IKEA's internal sales data.</p>
+    <p class="note"><b>DATA</b>Public Kaggle dataset with 401,046 products from 46 countries. I used the 9,242 products sold in the UAE. It is a snapshot of the online catalogue with ratings and prices, not IKEA's internal sales data.</p>
   </div></div>
 </section>
 
 <section class="block" id="findings">
+  <style>
+    #findings .ans { display: flex; flex-direction: column; }
+    #findings .q { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .6px; text-transform: uppercase; margin: 0 0 12px; }
+    #findings .big { font-family: var(--display); font-size: 44px; font-weight: 700; line-height: 1; margin: 0; }
+    #findings .head { font-family: var(--display); font-size: 19px; font-weight: 600; margin: 8px 0 18px; color: var(--text); }
+    #findings .nbar .t div.mute { background: rgba(255,255,255,.22); }
+    #findings .foot { margin: auto 0 0; padding-top: 14px; color: var(--text-2); font-size: 14px; border-top: 1px solid var(--line); }
+    #findings .scale { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: right; margin: -4px 52px 0 0; }
+    #findings .chips { display: flex; gap: 10px; margin: 14px 0 0; flex-wrap: wrap; }
+    #findings .chip { font-family: var(--mono); font-size: 12.5px; color: var(--text-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 12px; }
+    #findings .chip b { color: var(--text); }
+    #findings .stack { display: flex; height: 22px; border-radius: 6px; overflow: hidden; margin: 6px 0 12px; }
+    #findings .stack span { display: block; height: 100%; }
+    #findings .legend { display: grid; gap: 8px; font-size: 13.5px; color: var(--text-2); }
+    #findings .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; }
+    #findings .legend b { color: var(--text); font-family: var(--mono); font-weight: 600; margin-left: 6px; }
+    @media (max-width: 560px) { #findings .big { font-size: 38px; } #findings .scale { margin-right: 44px; } }
+  </style>
   <div class="wrap"><div class="shell reveal">
     <div class="label"><span>Findings</span></div>
     <h2>What the data showed</h2>
-    <p class="intro">One answer for each of the four questions.</p>
+    <p class="intro">Four questions, four answers. Each card starts with the answer, then shows the numbers behind it.</p>
     <div class="dash">
-      <div class="hud">
-        <h3>Q1. Ratings by category</h3>
-        <p class="sub">Top 3 and bottom 3 UAE categories (50+ products each). Bars start at 3.5.</p>
-        <div class="nbar"><span class="l">small storage</span><div class="t"><div class="bg-green" style="width:75%"></div></div><span class="v">4.62</span></div>
-        <div class="nbar"><span class="l">home electronics</span><div class="t"><div class="bg-green" style="width:71%"></div></div><span class="v">4.56</span></div>
-        <div class="nbar"><span class="l">kitchenware</span><div class="t"><div class="bg-green" style="width:70%"></div></div><span class="v">4.55</span></div>
-        <div class="nbar"><span class="l">beds &amp; mattresses</span><div class="t"><div class="bg-amber" style="width:49%"></div></div><span class="v">4.24</span></div>
-        <div class="nbar"><span class="l">curtains &amp; blinds</span><div class="t"><div class="bg-amber" style="width:37%"></div></div><span class="v">4.06</span></div>
+
+      <div class="hud ans">
+        <p class="q">Q1 · Which categories do customers rate best and worst?</p>
+        <p class="big c-red">3.93</p>
+        <p class="head">Sofas are the lowest rated category.</p>
+        <div class="nbar"><span class="l">small storage</span><div class="t"><div class="mute" style="width:75%"></div></div><span class="v">4.62</span></div>
+        <div class="nbar"><span class="l">home electronics</span><div class="t"><div class="mute" style="width:71%"></div></div><span class="v">4.56</span></div>
+        <div class="nbar"><span class="l">kitchenware</span><div class="t"><div class="mute" style="width:70%"></div></div><span class="v">4.55</span></div>
+        <div class="nbar"><span class="l">beds &amp; mattresses</span><div class="t"><div class="mute" style="width:49%"></div></div><span class="v">4.24</span></div>
+        <div class="nbar"><span class="l">curtains &amp; blinds</span><div class="t"><div class="mute" style="width:37%"></div></div><span class="v">4.06</span></div>
         <div class="nbar"><span class="l">sofas &amp; armchairs</span><div class="t"><div class="bg-red" style="width:29%"></div></div><span class="v c-red">3.93</span></div>
+        <p class="scale">scale 3.5 → 5.0</p>
+        <p class="foot">Top 3 and bottom 3 UAE categories with 50+ products. Small storage is the highest at 4.62.</p>
       </div>
-      <div class="hud">
-        <h3>Q2. UAE prices vs the Gulf</h3>
-        <p class="sub">5,136 products sold in all 3 countries, prices in AED</p>
-        <div class="nbar"><span class="l">vs Saudi Arabia</span><div class="t"><div class="bg-blue" style="width:100%"></div></div><span class="v c-blue">-15%</span></div>
-        <div class="nbar"><span class="l">vs Qatar</span><div class="t"><div class="bg-blue" style="width:7%"></div></div><span class="v">-1%</span></div>
-        <p class="sub" style="margin:16px 0 4px">Share of products cheaper in the UAE</p>
-        <div class="nbar"><span class="l">vs Saudi Arabia</span><div class="t"><div class="bg-cyan" style="width:70%"></div></div><span class="v">70%</span></div>
-        <div class="nbar"><span class="l">vs Qatar</span><div class="t"><div class="bg-cyan" style="width:79%"></div></div><span class="v">79%</span></div>
-        <p class="sub" style="margin:14px 0 0">Median price difference. Negative means the UAE is cheaper.</p>
+
+      <div class="hud ans">
+        <p class="q">Q2 · Are UAE prices higher or lower than the Gulf?</p>
+        <p class="big c-blue">-15%</p>
+        <p class="head">The UAE is cheaper than Saudi Arabia.</p>
+        <div class="nbar"><span class="l">UAE</span><div class="t"><div class="bg-blue" style="width:85%"></div></div><span class="v c-blue">99</span></div>
+        <div class="nbar"><span class="l">Qatar</span><div class="t"><div class="mute" style="width:86%"></div></div><span class="v">100</span></div>
+        <div class="nbar"><span class="l">Saudi Arabia</span><div class="t"><div class="mute" style="width:100%"></div></div><span class="v">117</span></div>
+        <p class="scale">median price, AED</p>
+        <div class="chips">
+          <span class="chip">cheaper than Saudi for <b>70%</b> of products</span>
+          <span class="chip">vs Qatar <b>-1%</b></span>
+        </div>
+        <p class="foot">The same 5,136 products in all 3 countries, prices converted to AED.</p>
       </div>
-      <div class="hud">
-        <h3>Q3. Does "Top Seller" mean better?</h3>
-        <p class="sub">Average reviews per product, by badge</p>
-        <div class="nbar"><span class="l">TOP_SELLER</span><div class="t"><div class="bg-violet" style="width:100%"></div></div><span class="v c-violet">10.95</span></div>
-        <div class="nbar"><span class="l">LIMITED_EDITION</span><div class="t"><div class="bg-blue" style="width:78%"></div></div><span class="v">8.50</span></div>
-        <div class="nbar"><span class="l">no badge</span><div class="t"><div class="bg-blue" style="width:35%"></div></div><span class="v">3.84</span></div>
-        <p class="sub" style="margin:14px 0 0">Average rating is the same: 4.41 for Top Sellers and 4.41 for products with no badge.</p>
+
+      <div class="hud ans">
+        <p class="q">Q3 · Does "Top Seller" mean better?</p>
+        <p class="big c-violet">~3x</p>
+        <p class="head">Top Sellers get more reviews, not better ratings.</p>
+        <div class="nbar"><span class="l">Top Seller</span><div class="t"><div class="bg-violet" style="width:100%"></div></div><span class="v c-violet">10.95</span></div>
+        <div class="nbar"><span class="l">Limited edition</span><div class="t"><div class="mute" style="width:78%"></div></div><span class="v">8.50</span></div>
+        <div class="nbar"><span class="l">no badge</span><div class="t"><div class="mute" style="width:35%"></div></div><span class="v">3.84</span></div>
+        <p class="scale">reviews per product</p>
+        <div class="chips">
+          <span class="chip">rating, Top Seller <b>4.41</b></span>
+          <span class="chip">rating, no badge <b>4.41</b></span>
+        </div>
+        <p class="foot">Same rating, about 3 times more reviews. The badge means popular, not higher quality.</p>
       </div>
-      <div class="hud">
-        <h3>Q4. How fresh is the range?</h3>
-        <p class="sub">Sale tag on the 9,242 UAE products</p>
-        <div class="nbar"><span class="l">new product</span><div class="t"><div class="bg-green" style="width:8%"></div></div><span class="v">715</span></div>
-        <div class="nbar"><span class="l">new lower price</span><div class="t"><div class="bg-cyan" style="width:13%"></div></div><span class="v">1,185</span></div>
-        <div class="nbar"><span class="l">no tag</span><div class="t"><div class="bg-blue" style="width:79%"></div></div><span class="v">7,342</span></div>
-        <div class="nbar"><span class="l">discontinued</span><div class="t"><div class="bg-red" style="width:0%"></div></div><span class="v">0</span></div>
+
+      <div class="hud ans">
+        <p class="q">Q4 · How fresh is the product range?</p>
+        <p class="big c-cyan">20%</p>
+        <p class="head">1 in 5 UAE products is new or cheaper.</p>
+        <div class="stack">
+          <span style="width:7.7%;background:var(--green)"></span>
+          <span style="width:12.8%;background:var(--cyan)"></span>
+          <span style="width:79.5%;background:rgba(255,255,255,.12)"></span>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--green)"></i>New product<b>715</b></span>
+          <span><i style="background:var(--cyan)"></i>New lower price<b>1,185</b></span>
+          <span><i style="background:rgba(255,255,255,.25)"></i>No tag<b>7,342</b></span>
+        </div>
+        <p class="foot">Sale tags on all 9,242 UAE products. No product is marked as discontinued.</p>
       </div>
-    </div>
-    <div class="findings" style="margin-top:18px">
-      <div class="finding"><span class="num c-red">3.93</span><b>Sofas need attention.</b><p>Sofas and armchairs are the lowest rated category in the UAE. Small storage items are the highest at 4.62.</p></div>
-      <div class="finding"><span class="num c-blue">-15%</span><b>The UAE is cheaper than Saudi Arabia.</b><p>For the same products, UAE prices are about 15% lower. UAE and Qatar prices are almost the same.</p></div>
-      <div class="finding"><span class="num c-violet">~3x</span><b>"Top Seller" means popular, not better.</b><p>Top Sellers get about 3 times more reviews, but the same 4.41 rating as other products.</p></div>
-      <div class="finding"><span class="num c-cyan">20%</span><b>The range is fresh.</b><p>About 1 in 5 UAE products is new or has a new lower price, and none are discontinued.</p></div>
+
     </div>
   </div></div>
 </section>
@@ -166,21 +162,6 @@
   </div></div>
 </section>
 
-<section class="block" id="charts">
-  <div class="wrap"><div class="shell reveal">
-    <div class="label"><span>Charts</span></div>
-    <h2>The charts from my notebook</h2>
-    <p class="intro">Made with matplotlib in the Jupyter notebook. <a href="https://github.com/moustafagabbas/ikea-uae-analysis/blob/main/ikea_analysis.ipynb" target="_blank" rel="noopener">See the notebook on GitHub</a>.</p>
-    <div class="gallery">
-      <figure><div class="chrome"><i></i><i></i><i></i><span>ratings_by_category.png</span></div><img class="paper" src="../../assets/ikea/ratings_by_category.png" alt="Average rating by category in the UAE" loading="lazy"><figcaption><b>Ratings by category:</b> every UAE category with 50+ products, sofas at the bottom.</figcaption></figure>
-    </div>
-    <div class="gallery two" style="margin-top:22px">
-      <figure><div class="chrome"><i></i><i></i><i></i><span>gulf_prices.png</span></div><img class="paper" src="../../assets/ikea/gulf_prices.png" alt="UAE prices compared with Saudi Arabia and Qatar" loading="lazy"><figcaption><b>Gulf prices:</b> UAE vs Saudi Arabia and Qatar for the same products.</figcaption></figure>
-      <figure><div class="chrome"><i></i><i></i><i></i><span>reviews_by_badge.png</span></div><img class="paper" src="../../assets/ikea/reviews_by_badge.png" alt="Average reviews by badge" loading="lazy"><figcaption><b>Reviews by badge:</b> Top Sellers get about 3x more reviews.</figcaption></figure>
-    </div>
-  </div></div>
-</section>
-
 <section class="block" id="how">
   <div class="wrap"><div class="shell reveal">
     <div class="label"><span>Process</span></div>
@@ -192,6 +173,22 @@
       <div class="step"><span class="n">step_03</span><h3>Filter &amp; compare</h3><p>Kept the 9,242 UAE products. For prices, converted SAR and QAR to AED and used pivot_table + dropna to keep only products sold in all 3 countries.</p></div>
       <div class="step"><span class="n">step_04</span><h3>Analyse &amp; show</h3><p>Used groupby and agg by category and badge, then one simple bar chart per finding.</p></div>
     </div>
+  </div></div>
+</section>
+
+<section class="block" id="charts">
+  <div class="wrap"><div class="shell reveal">
+    <div class="label"><span>Charts</span></div>
+    <h2>The original charts from my notebook</h2>
+    <p class="intro">Made with matplotlib in the Jupyter notebook. <a href="https://github.com/moustafagabbas/ikea-uae-analysis/blob/main/ikea_analysis.ipynb" target="_blank" rel="noopener">See the notebook on GitHub</a>.</p>
+    <div class="gallery">
+      <figure><div class="chrome"><i></i><i></i><i></i><span>ratings_by_category.png</span></div><img class="paper" src="../../assets/ikea/ratings_by_category.png" alt="Average rating by category in the UAE" loading="lazy"><figcaption><b>Ratings by category:</b> every UAE category with 50+ products, sofas at the bottom.</figcaption></figure>
+    </div>
+    <div class="gallery two" style="margin-top:22px">
+      <figure><div class="chrome"><i></i><i></i><i></i><span>gulf_prices.png</span></div><img class="paper" src="../../assets/ikea/gulf_prices.png" alt="UAE prices compared with Saudi Arabia and Qatar" loading="lazy"><figcaption><b>Gulf prices:</b> UAE vs Saudi Arabia and Qatar for the same products.</figcaption></figure>
+      <figure><div class="chrome"><i></i><i></i><i></i><span>reviews_by_badge.png</span></div><img class="paper" src="../../assets/ikea/reviews_by_badge.png" alt="Average reviews by badge" loading="lazy"><figcaption><b>Reviews by badge:</b> Top Sellers get about 3x more reviews.</figcaption></figure>
+    </div>
+
     <div class="btns" style="justify-content:center;margin-top:36px">
       <a class="btn ghost" href="https://github.com/moustafagabbas/ikea-uae-analysis" target="_blank" rel="noopener">See the code and notebook</a>
       <a class="btn ghost" href="../../index.html">← Back to portfolio</a>
